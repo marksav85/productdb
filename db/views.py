@@ -1,7 +1,7 @@
 
 from rest_framework import generics
-from .models import Product, SubCategory, SubProduct
-from .serializers import ProductSerializer, SubCategorySerializer, SubProductSerializer
+from .models import Product, SubCategory, SubProduct, OrderList
+from .serializers import ProductSerializer, SubCategorySerializer, SubProductSerializer, OrderListSerializer
 
 class ProductList(generics.ListCreateAPIView):
     queryset = Product.objects.all()
@@ -26,3 +26,7 @@ class SubProductList(generics.ListCreateAPIView):
 class SubProductDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = SubProduct.objects.all()
     serializer_class = SubProductSerializer
+    
+class OrderListCreateView(generics.CreateAPIView):
+    queryset = OrderList.objects.all()
+    serializer_class = OrderListSerializer

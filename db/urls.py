@@ -30,5 +30,8 @@ urlpatterns = [
     # URLs for SubProduct endpoints
     path('subproducts/', views.SubProductList.as_view(), name='subproduct-list'),
     path('subproducts/<int:pk>/', views.SubProductDetail.as_view(), name='subproduct-detail'),
+    
+    # URL for OrderItem endpoint
+    path('orders/', views.OrderListCreateView.as_view(), name='order-list-create'),
 ]
 

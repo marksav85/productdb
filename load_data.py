@@ -32,7 +32,8 @@ def load_data():
     for subproduct_data in data['subproducts']:
         subcategory = SubCategory.objects.get(subCategoryId=subproduct_data['subCategoryId'])
         subproduct = SubProduct.objects.create(subCategoryId=subcategory, subProductId=subproduct_data['subProductId'], subProductName=subproduct_data['subProductName'])
-    pass
+    
+    print("Data restoration complete.")
 
 if __name__ == "__main__":
     load_data()
